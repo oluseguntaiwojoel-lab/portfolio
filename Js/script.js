@@ -65,6 +65,50 @@ document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
+const contactForm = document.getElementById('contactForm');
+const contactStatus = document.getElementById('contactStatus');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const formData = new FormData(contactForm);
+        const payload = Object.fromEntries(formData.entries());
+
+        contactStatus.textContent = 'Sending your message...';
+        contactStatus.className = 'contact-status';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+            const responseText = await response.text();
+            const data = responseText ? JSON.parse(responseText) : {};
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Message failed to send.');
+            }
+
+            contactStatus.textContent = data.message || 'Message sent successfully.';
+            contactStatus.classList.add('success');
+            contactForm.reset();
+        } catch (error) {
+            contactStatus.textContent = error.message || 'Sorry, your message could not be sent right now.';
+            contactStatus.classList.add('error');
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+        }
+    });
+}
+
 // Button click animations
 document.querySelectorAll('button, .btn-nav, .outline, .download, .contact-btn, .box-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {

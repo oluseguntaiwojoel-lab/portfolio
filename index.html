@@ -61,17 +61,17 @@
             <div class="welcome">
                 <p class="welcome-text"><span>[ </span> Welcome To My World <span>]</span></p>
                 <div class="welcome-links">
-                    <a href="https://www.facebook.com/share/18N9KRJYq4/?mibextid=wwXIfr" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/jayllordd?s=21" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/taiwo-olusegun-398b0737a" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/jewel_safehaven?igsh=MXRjNnpjN3Vvdmlicg%3D%3D&utm_source=qr" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/18N9KRJYq4/?mibextid=wwXIfr" target="_blank" title="Facebook" rel="noopener" noreferer><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/jayllordd?s=21" target="_blank" title="Twitter" rel="noopener" noreferer><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/taiwo-olusegun-398b0737a" target="_blank" title="LinkedIn" rel="noopener" noreferer><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/jewel_safehaven?igsh=MXRjNnpjN3Vvdmlicg%3D%3D&utm_source=qr" target="_blank" title="Instagram" rel="noopener" noreferer><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <h1>Explore My World Of <span>Content Creation.</span></h1>
             <!-- <p style="color: #666; font-size: 1.05rem; line-height: 1.8;">Building beautiful, responsive web experiences that matter. Let me turn your ideas into digital reality.</p> -->
             <div class="hero-btn">
                 <button class="outline">Hi I Am Joel Olusegun</button>
-                <a href="docx/Olusegun_Taiwo_Joel_CV.pdf" target="_blank" class="download">Download CV<i class="fa-solid fa-download"></i></a>
+                <a href="docx/Olusegun_Taiwo_Joel_CV.pdf" class="download">Download CV<i class="fa-solid fa-download"></i></a>
             </div>
         </div>
         <div class="hero-image">
@@ -253,7 +253,7 @@
 
 
                 <div class="project-card">
-                    <a href="https://ig-clone-xi.vercel.app"> <img src="image/ig.png" alt=""></a>
+                    <a href="https://ig-clone-xi.vercel.app"> <img src="image/ig.png" alt="" rel="noopener" noreferer></a>
                    
                     <div class="project-content">
                         <div class="all-content">
@@ -316,20 +316,21 @@
 
 
             <div class="message">
-                <div class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <h3>Send Me a Message</h3>
                     
                     <div class="contact-row">
-                        <input type="text" placeholder="Your Name">
-                        <input type="tel" id="phone" placeholder="Your Phone">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
                     </div>
 
-                    <input type="email" placeholder="Your Email">
-                    <input type="text" placeholder="subject">
-                    <textarea name="text" id="message" placeholder="Your Message"></textarea>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="subject" required>
+                    <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                    <p id="contactStatus" class="contact-status" aria-live="polite"></p>
 
-                    <button>Send Message</button>
-                </div>
+                    <button type="submit">Send Message</button>
+                </form>
 
                 <div class="contact-info">
 
@@ -346,7 +347,7 @@
                         <p>
                             Please contact me through my email
                         </p>
-                        <p>oluseguntaiwo25@outlook.com</p>
+                        <p>oluseguntaiwojoel@gmail.com</p>
                     </div>
 
                     <div class="info-box">
@@ -414,10 +415,10 @@
                     
                     <ul>
                         <li><h4>Connect</h4></li>
-                        <li><a href="https://wa.me/2348133152956" target="_blank">Contact Me</a></li>
+                        <li><a href="tel:+2348133152956" target="_blank">Contact Me</a></li>
                         <li><a href="mailto:oluseguntaiwojoel@gmail.com">Email</a></li>
                         <li><a href="https://www.linkedin.com/in/taiwo-olusegun-398b0737a"          target="_blank">LinkedIn</a></li>
-                        <li> <a href="https://github.com" target="_blank">GitHub</a></li>
+                        <li> <a href="https://github.com" target="_blank" rel="noopener" noreferer>GitHub</a></li>
                         <li><a href=""> Telegram</a></li>
                     </ul>  
                 </div>
